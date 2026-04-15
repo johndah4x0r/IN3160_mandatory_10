@@ -46,6 +46,7 @@ architecture structural of self_test_unit is
         end if;
     end function;
 begin
+    /*
     gpio_synch: entity work.bus_synch(rtl)
         generic map (
             WIDTH => DATA_WIDTH
@@ -56,6 +57,7 @@ begin
             bus_in => duty_cycle,
             bus_out => seq
         );
+    */
 
     sig_gen: entity work.pulse_width_modulator(behavioral)
         -- change values, or omit the mapping outright,
@@ -69,7 +71,7 @@ begin
         port map (
             mclk => clk,
             reset => reset,
-            duty_cycle => seq,
+            duty_cycle => duty_cycle,
             dir => pwm_bus(1),
             en => pwm_bus(0)
         );

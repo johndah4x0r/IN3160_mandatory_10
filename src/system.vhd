@@ -10,7 +10,7 @@ use ieee.numeric_std.all;
 
 entity system is
     generic (
-        MASTER_LIMIT    : integer := 2_500;                             -- master limit value (4 Hz - use reasonable values in simulations)
+        MASTER_LIMIT    : integer := 5_000;                             -- master limit value (4 Hz - use reasonable values in simulations)
         MIN_OFF         : std_ulogic_vector(19 downto 0) := x"0000A";
         MIN_ON          : std_ulogic_vector(19 downto 0) := x"0000A";
         MAX_ON          : std_ulogic_vector(19 downto 0) := x"000C8"
